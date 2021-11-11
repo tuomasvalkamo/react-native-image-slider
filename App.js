@@ -1,13 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, SafeAreaView } from 'react-native';
+import ImageSlider from './components/ImageSlider';
 
 export default function App() {
+
+  const images = [
+    'https://picsum.photos/400/600',
+    'https://picsum.photos/300/500',
+    'https://picsum.photos/350/550'
+  ]
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <ImageSlider data={images} width={350} height={350} />
+    </SafeAreaView>
   );
 }
 
@@ -17,5 +23,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 50
   },
 });
